@@ -38,7 +38,7 @@ namespace UnitTestProject
         bool compare(Matrix3 a, Matrix3 b, float tolerance = DEFAULT_TOLERANCE)
         {
             if (Math.Abs(a.m1x1 - b.m1x1) > tolerance || Math.Abs(a.m1x2 - b.m1x2) > tolerance || Math.Abs(a.m1x3 - b.m1x3) > tolerance ||
-                Math.Abs(a.m2x1 - b.m2x1) > tolerance || Math.Abs(a.mx2x2 - b.mx2x2) > tolerance || Math.Abs(a.m2x3 - b.m2x3) > tolerance ||
+                Math.Abs(a.m2x1 - b.m2x1) > tolerance || Math.Abs(a.m2x2 - b.m2x2) > tolerance || Math.Abs(a.m2x3 - b.m2x3) > tolerance ||
                 Math.Abs(a.m3x1 - b.m3x1) > tolerance || Math.Abs(a.m3x2 - b.m3x2) > tolerance || Math.Abs(a.m3x3 - b.m3x3) > tolerance)
                 return false;
             return true;
@@ -135,7 +135,7 @@ namespace UnitTestProject
         {
             Vector3 v3a = new Vector3(13.5f, -48.23f, 862);
             Vector3 v3b = new Vector3(5, 3.99f, -12);
-            float dot3 = v3a.Dot(v3b);
+            float dot3 = v3a.DotProduct(v3b);
 
             Assert.AreEqual(dot3, -10468.9375f, DEFAULT_TOLERANCE);
         }
@@ -145,7 +145,7 @@ namespace UnitTestProject
         {
             Vector4 v4a = new Vector4(13.5f, -48.23f, 862, 0);
             Vector4 v4b = new Vector4(5, 3.99f, -12, 1);
-            float dot4 = v4a.Dot(v4b);
+            float dot4 = v4a.DotProduct(v4b);
 
             Assert.AreEqual(dot4, -10468.9375f, DEFAULT_TOLERANCE);
         }
@@ -155,7 +155,7 @@ namespace UnitTestProject
         {
             Vector3 v3a = new Vector3(13.5f, -48.23f, 862);
             Vector3 v3b = new Vector3(5, 3.99f, -12);
-            Vector3 v3c = v3a.Cross(v3b);
+            Vector3 v3c = v3a.CrossProduct(v3b);
 
             Assert.IsTrue(compare(v3c, new Vector3(-2860.62011719f, 4472.00000000f, 295.01498413f)));
         }
@@ -165,7 +165,7 @@ namespace UnitTestProject
         {
             Vector4 v4a = new Vector4(13.5f, -48.23f, 862, 0);
             Vector4 v4b = new Vector4(5, 3.99f, -12, 1);
-            Vector4 v4c = v4a.Cross(v4b);
+            Vector4 v4c = v4a.CrossProduct(v4b);
 
             Assert.IsTrue(compare(v4c, new Vector4(-2860.62011719f, 4472.00000000f, 295.01498413f, 0)));
         }
